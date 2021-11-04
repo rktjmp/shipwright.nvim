@@ -27,9 +27,7 @@ Shipwright is a build system, originally designed for use with
 [Lush.nvim](https://github.com/rktjmp/lush.nvim), but it can be applied
 generally to any data, particularly colorscheme data.
 
-It is packaged as a neovim plugin, but it can be called from any Lua 5.1
-runtime (PS: Todo: unpack is probably the only non-compat thing which can be
-fixed easily).
+It is packaged as a neovim plugin, but it can be called from any Lua runtime.
 
 Shipwright runs a simple functional pipeline, where functions transform data in
 order, feeding their result to the next function in the pipeline. These

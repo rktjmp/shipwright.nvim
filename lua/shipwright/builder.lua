@@ -1,4 +1,5 @@
 local function run_pipeline(value, ...)
+  unpack = unpack or table.unpack
   local continue_pipeline = nil -- anything but false will continue
   local pipeline = {...}
   assert(type(value) == "table",
