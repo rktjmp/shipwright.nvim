@@ -148,7 +148,7 @@ color15 $bright_white
 
 # You can set the remaining 240 colors as color16 to color255.]]
 
-local helpers = require("lush.transform.helpers")
+local helpers = require("shipwright.transform.helpers")
 local check_keys = {
   "fg", "bg",
   "cursor_fg", "cursor_bg",
