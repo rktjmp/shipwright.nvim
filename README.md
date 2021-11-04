@@ -13,6 +13,7 @@ run(colorscheme,
   {overwrite, "colors/zenbones.vim"})
 ```
 
+- [Requirements & Install](#requirements--install)
 - [What is Shipwright?](#what-is-shipwright)
 - [What is a transform?](#what-is-a-transform)
 - [Applying transforms](#applying-transforms)
@@ -20,6 +21,16 @@ run(colorscheme,
 - [`:Shipwright <build_file>`](#shipwright-build_file)
 - [Transform list](#transform-list)
 - [Transform helpers](#transform-helpers)
+
+## Requirements & Install
+
+Shipwright requires a lua runtime, it probably works in any version of neovim.
+
+Install with any package manager:
+
+```lua
+use "rktjmp/shipwright.nvim"
+```
 
 ## What is Shipwright?
 
