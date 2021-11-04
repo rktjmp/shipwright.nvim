@@ -92,7 +92,7 @@ It's important to remember:
 
 - The build file is "just lua", you can use any normal lua inside it, including
   loops, other modules, etc.
-- Transformers are "just functions", so it's very simple to write your own
+- Transforms are "just functions", so it's very simple to write your own
   extensions to the provided transforms.
 
 ## Example: converting a colorscheme to an alacritty theme
@@ -194,11 +194,43 @@ each string is a command".
 - Accepts
   - a table of items to prepend, or a single item
 
+<details>
+
+```lua
+run(melange,
+  to_vimscript,
+  {append, "append this line"})
+```
+
+```lua
+run(melange,
+  to_vimscript,
+  {append, {"append", "these", "lines"})
+```
+
+</details>
+
 **`append`**
 
 - Appends given arguments to given table.
 - Accepts
   - a table of items to append, or a single item
+
+<details>
+
+```lua
+run(melange,
+  to_vimscript,
+  {prepend, "prepend this line"})
+```
+
+```lua
+run(melange,
+  to_vimscript,
+  {prepend, {"prepend", "these", "lines"})
+```
+
+</details>
 
 **`overwrite`**
 
@@ -206,6 +238,16 @@ each string is a command".
   content.
 - Accepts
   - a path to write to
+
+<details>
+
+```lua
+run(melange,
+  to_vimscript,
+  {overwrite, "colors/melange.vim"})
+```
+
+</details>
 
 **`patchwrite`**
 
@@ -215,6 +257,34 @@ each string is a command".
   - a path to write to
   - a string to match against, indicating where writing should start
   - a string to match against, indicating where writing should stop
+
+<details>
+
+```viml
+" colors/double.vim
+let ...
+let ...
+" PATCH_OPEN
+" This content will be replaced
+" PACH_CLOSE
+```
+
+```lua
+run(doubletrouble,
+  to_vimscript,
+  {patchwrite, "colors/double.vim", [[" PATCH_OPEN]], [[" PATCH_CLOSE]]})
+```
+
+```viml
+" colors/double.vim
+let ...
+let ...
+" PATCH_OPEN
+highlight ...
+" PACH_CLOSE
+```
+
+</details>
 
 **`branch`**
 
@@ -227,7 +297,7 @@ each string is a command".
 
 ```lua
 run(zenbones,
-  lush_to_vimscript,
+  to_vimscript,
   {branch,
     vim_compatible_vimscript,
     {prepend, [["vim-compatible, see http://... for more details]]},
