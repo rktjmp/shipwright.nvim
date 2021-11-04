@@ -18,4 +18,8 @@ M.build = function(build_file)
   assert(pcall(build_fn))
 end
 
+M.run = function(...)
+  return require("shipwright.builder").run(unpack({...}))
+end
+
 return M

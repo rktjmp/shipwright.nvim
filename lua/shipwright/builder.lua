@@ -39,7 +39,7 @@ local function run_pipeline(value, ...)
     end
 
     assert(type(value) == "table",
-      " transformation #" .. i .. " did not return a table")
+      " transformation #" .. i .. " did not return a table, got: " .. type(value))
 
     if continue_pipeline == false then break end
   end
