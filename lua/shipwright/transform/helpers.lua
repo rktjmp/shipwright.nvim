@@ -20,7 +20,7 @@ local function hex_to_rgb(hex_str)
 end
 
 --- Replace $values in a string from a table of {values = "string"}
--- "my color is $MY_COLOR", {MY_COLOR = "red"} -> "my color is red"
+-- "my_color is $COLOR", {COLOR = "red"} -> "my_color is red"
 -- @param template A string
 -- @param map A table of replacement values
 local function apply_template(template, map)
@@ -40,8 +40,6 @@ local function split_newlines(text)
 end
 
 return {
-  -- is argument a lush spec
-  is_lush_spec = is_lush_spec,
   -- split string into table by new lines
   split_newlines = split_newlines,
   -- apply "this is my $template", {template = "replacement"} templating

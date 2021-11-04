@@ -2,7 +2,7 @@ local function run_pipeline(value, ...)
   local continue_pipeline = nil -- anything but false will continue
   local pipeline = {...}
   assert(type(value) == "table",
-    "first argument to export must be a table")
+    "first argument to run must be a table, got: " .. type(value))
   -- because lua tables are garbage, you can do something like
   -- {my_pip, my_pipe, my_pipe} and get {nil, fn, fn},
   -- (and my_pip wont error, just silently nil out)
@@ -30,8 +30,8 @@ local function run_pipeline(value, ...)
       -- to shift) because the config may be shared between other export calls
       local func = transform[1]
       assert(func,
-       "given transform function was nil, did you mis-spell it?")
-      local args = vim.list_slice(transform, 2, #transform)
+        "given transform function was nil, did you mis-spell it?")
+      local args = {unpack(transform, 2, #transform)}
       value, continue_pipeline = func(value, unpack(args))
     else
       error("Invalid type in pipeline at index " .. i .. " ( " .. type(transform) .. ")")
@@ -49,6 +49,8 @@ end
 -- Create an environment to run the build file in.
 -- This should expose all the built in transformers, as well as lush itself.
 local function make_env(merge)
+  merge = merge or {}
+
   local env = {
     run = require("shipwright.builder").run,
     branch = require("shipwright.transform.branch"),
@@ -56,9 +58,9 @@ local function make_env(merge)
     patchwrite = require("shipwright.transform.patchwrite"),
     prepend = require("shipwright.transform.prepend"),
     append = require("shipwright.transform.append"),
-    contribl = {
+    contrib = {
       alacritty = require("shipwright.transform.contrib.alacritty"),
-      wezcontrib = require("shipwright.transform.term.wezterm"),
+      wezcontrib = require("shipwright.transform.contrib.wezterm"),
       kitty = require("shipwright.transform.contrib.kitty"),
     }
   }
