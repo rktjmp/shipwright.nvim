@@ -5,12 +5,16 @@ Shipwright
 
 ```lua
 -- shipwright_build.lua
-local colorscheme = require("zenbones")
-local lush = require("shipwright.transform.lush")
-
-run(colorscheme,
-  lush.to_vimscript,
-  {overwrite, "colors/zenbones.vim"})
+local palette = require("zenbones").palette
+run(palette,
+  function(colors)
+    return {
+      fg = colors.red,
+      ...
+    }
+  end,
+  contrib.alacritty,
+  {overwrite, "extra/alacritty.yml"})
 ```
 
 - [Requirements & Install](#requirements--install)
