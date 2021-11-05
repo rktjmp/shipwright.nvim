@@ -61,7 +61,7 @@ local function make_env(merge)
     append = require("shipwright.transform.append"),
     contrib = {
       alacritty = require("shipwright.transform.contrib.alacritty"),
-      wezcontrib = require("shipwright.transform.contrib.wezterm"),
+      wezterm = require("shipwright.transform.contrib.wezterm"),
       kitty = require("shipwright.transform.contrib.kitty"),
     }
   }
