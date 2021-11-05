@@ -15,6 +15,8 @@ local function run_pipeline(value, ...)
   end
   assert(#pipeline == check_count,
     "export pipeline reported length and actual length differ, you probably have a nil in it (mis-spelling?)")
+  assert(#pipeline > 0,
+    "pipeline must have at least one transform")
 
   -- pass through the pipeline
   for i, transform in ipairs(pipeline) do
