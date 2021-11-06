@@ -24,8 +24,29 @@ end
 -- @param template A string
 -- @param map A table of replacement values
 local function apply_template(template, map)
-  local output = string.gsub(template, "$([%w%d_]+)", map)
-  return output
+  -- ensure that each replacement value is a string
+  local stringable = function(check)
+    if type(check) == "table" then
+      -- tables *might* be tostring-able
+      local maybe_tostring = rawget(getmetatable(check) or {}, "__tostring")
+      return type(maybe_tostring) == "function"
+    elseif type(check) == "function" then
+      -- functions are never tostring-able
+      return false
+    else
+      -- assume other types have runtime tostring functions
+      return true
+    end
+  end
+
+  local replacements = {}
+  for key, val in pairs(map) do
+    assert(stringable(val),
+      "template value could not convert to string for key: " .. key .. " got: " .. type(val))
+    replacements[key] = tostring(val)
+  end
+
+  return string.gsub(template, "$([%w%d_]+)", replacements)
 end
 
 --- Converts a mutli-line string into a table of lines
