@@ -50,8 +50,8 @@ colors:
     foreground: '$fg'
     background: '$bg'
   cursor:
-    foreground: '$cursor_fg'
-    background: '$cursor_bg'
+    cursor: '$cursor_fg'
+    text: '$cursor_bg'
   normal:
     black:   '$black'
     red:     '$red'
