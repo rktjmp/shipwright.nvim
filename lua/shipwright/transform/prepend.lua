@@ -5,7 +5,7 @@ return function(after, before)
   -- build fresh cause mutability sucks
   local collect = {}
 
-  if type(after) == table then
+  if type(before) == "table"  then
     for _, line in ipairs(before) do
       table.insert(collect, line)
     end

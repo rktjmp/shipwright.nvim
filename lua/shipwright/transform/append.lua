@@ -9,7 +9,7 @@ return function(before, after)
     table.insert(collect, line)
   end
 
-  if type(after) == table then
+  if type(after) == "table" then
     for _, line in ipairs(after) do
       table.insert(collect, line)
     end
