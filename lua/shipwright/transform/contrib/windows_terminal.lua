@@ -1,30 +1,30 @@
 --- windows terminal transform, expects a table in the shape:
 --
 -- @param colors {
--- "name" : "Theme Name",
+-- name = "Theme Name",
 
--- "cursorColor": "#000000",
--- "selectionBackground": "#000000",
+-- cursor_bg = "#000000",
+-- selection_bg = "#000000",
 
--- "background" : "#000000",
--- "foreground" : "#000000",
+-- bg = "#000000",
+-- fg = "#000000",
 
--- "black" : "#000000",
--- "blue" : "#000000",
--- "cyan" : "#000000",
--- "green" : "#000000",
--- "purple" : "#000000",
--- "red" : "#000000",
--- "white" : "#000000",
--- "yellow" : "#000000",
--- "brightBlack" : "#000000",
--- "brightBlue" : "#000000",
--- "brightCyan" : "#000000",
--- "brightGreen" : "#000000",
--- "brightPurple" : "#000000",
--- "brightRed" : "#000000",
--- "brightWhite" : "#000000",
--- "brightYellow" : "#000000"
+-- black = "#000000",
+-- blue = "#000000",
+-- cyan = "#000000",
+-- green = "#000000",
+-- purple = "#000000",
+-- red = "#000000",
+-- white = "#000000",
+-- yellow = "#000000",
+-- bright_black = "#000000",
+-- bright_blue = "#000000",
+-- bright_cyan = "#000000",
+-- bright_green = "#000000",
+-- bright_purple = "#000000",
+-- bright_red = "#000000",
+-- bright_white = "#000000",
+-- bright_yellow = "#000000"
 -- }
 
 local template = [[{
