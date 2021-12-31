@@ -56,7 +56,7 @@ local template = [[{
 
 local helpers = require("shipwright.transform.helpers")
 local check_keys = {
-  "$name",
+  "name",
   "fg", "bg",
   "cursor_bg",
   "selection_bg",
