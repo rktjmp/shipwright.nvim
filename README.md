@@ -345,13 +345,18 @@ run(zenbones,
 
 **`contrib.kitty`**
 
-- Converts given table to an kitty colorscheme
+- Converts given table to a kitty colorscheme
 - Accepts
   - a specifically shaped map, see transform for exact format.
 
 **`contrib.wezterm`**
 
-- Converts given table to an wezterm colorscheme
+- Converts given table to a wezterm colorscheme
+- Accepts
+  - a specifically shaped map, see transform for exact format.
+
+**`contrib.foot`**
+- Converts given table to a foot colorscheme
 - Accepts
   - a specifically shaped map, see transform for exact format.
 
