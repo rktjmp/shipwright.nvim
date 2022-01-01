@@ -1,7 +1,8 @@
-Shipwright
-==========
+<div align="center">
+<img src="logo.jpg" style="width: 100%" alt="Shipwright Logo"/>
+</div>
 
-![Shipwright](logo.jpg)
+# Shipwright
 
 ```lua
 -- shipwright_build.lua
