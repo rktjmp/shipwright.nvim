@@ -65,7 +65,7 @@ local function transform(colors)
       "foot colors table missing key: " .. key)
   end
 
-  local text = string.gsub(helpers.apply_template(base_template, colors), "#", "")
+  local text = string.gsub(helpers.apply_template(base_template, colors), "#([%a%d]+)", "%1")
   return helpers.split_newlines(text)
 end
 
