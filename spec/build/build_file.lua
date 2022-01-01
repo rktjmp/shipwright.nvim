@@ -12,6 +12,7 @@ assert(type(contrib.wezterm) == "function")
 assert(type(contrib.alacritty) == "function")
 assert(type(contrib.kitty) == "function")
 assert(type(contrib.foot) == "function")
+assert(type(contrib.windows_terminal) == "function")
 
 -- can still access normal stuff
 assert(type(vim) == "table")

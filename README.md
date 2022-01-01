@@ -360,6 +360,12 @@ run(zenbones,
 - Accepts
   - a specifically shaped map, see transform for exact format.
 
+**`contrib.windows_terminal`**
+- Converts given table to a windows_terminal colorscheme
+- Accepts
+  - a specifically shaped map, see transform for exact format.
+
+
 Transform helpers
 -----------------
 
