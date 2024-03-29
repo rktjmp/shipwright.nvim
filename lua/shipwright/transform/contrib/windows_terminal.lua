@@ -50,8 +50,8 @@ local template = [[{
     "brightGreen": "$bright_green",
     "brightRed": "$bright_red",
     "brightPurple": "$bright_magenta",
-    "brightWhite": "$bright_white"
-    "brightYellow": "$bright_yellow",
+    "brightWhite": "$bright_white",
+    "brightYellow": "$bright_yellow"
 }]]
 
 local helpers = require("shipwright.transform.helpers")
